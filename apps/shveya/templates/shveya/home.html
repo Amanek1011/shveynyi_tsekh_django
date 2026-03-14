@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM швейного цеха</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shveya/css/style.css' %}">
 </head>
 <body>
-    <h1>home</h1>
+    <header class="header">
+        <div class="container">
+            <h1>CRM для швейного цеха</h1>
+            <p>Управление заказами, клиентами, материалами и производством в одном окне.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="dashboard-cards">
+            <article class="card">
+                <h2>Заказы</h2>
+                <p>Просмотр, создание и контроль статусов заказов.</p>
+                <a class="button" href="#">Перейти</a>
+            </article>
+            <article class="card">
+                <h2>Клиенты</h2>
+                <p>База клиентов и история взаимодействий.</p>
+                <a class="button" href="#">Перейти</a>
+            </article>
+            <article class="card">
+                <h2>Материалы</h2>
+                <p>Учет тканей, фурнитуры и расходных материалов.</p>
+                <a class="button" href="#">Перейти</a>
+            </article>
+            <article class="card">
+                <h2>Производство</h2>
+                <p>Состояние смены, сотрудники и выполненные позиции.</p>
+                <a class="button" href="#">Перейти</a>
+            </article>
+        </section>
+
+        <section class="quick-info">
+            <h2>Быстрые данные</h2>
+            <div class="info-grid">
+                <div class="info-item"><strong>Активных заказов:</strong> 12</div>
+                <div class="info-item"><strong>Новых клиентов:</strong> 5</div>
+                <div class="info-item"><strong>Материалов на складе:</strong> 84</div>
+                <div class="info-item"><strong>Сотрудников на смене:</strong> 8</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">&copy; {{ year|default:"2026" }} Швейный цех — CRM система</div>
+    </footer>
+
+    <script src="{% static 'shveya/js/script.js' %}"></script>
 </body>
 </html>

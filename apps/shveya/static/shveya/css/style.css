@@ -1,0 +1,103 @@
+/* Основной стиль для CRM главное меню */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background: #f6f7fb;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+    width: min(1150px, 96vw);
+    margin: 0 auto;
+}
+.header {
+    background: linear-gradient(135deg, #4a69bd 0%, #6a89cc 100%);
+    color: #fff;
+    padding: 28px 0 18px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.header h1 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+}
+.header p {
+    margin: 0;
+    opacity: 0.9;
+}
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 22px;
+}
+.card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 4px 13px rgba(16,24,40,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(16,24,40,0.15);
+}
+.card h2 {
+    margin: 0 0 10px;
+    color: #2f3e7a;
+}
+.card p {
+    margin: 0 0 14px;
+    color: #485066;
+}
+.button {
+    display: inline-block;
+    text-decoration: none;
+    background: #4a69bd;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 7px;
+    font-weight: 600;
+}
+.quick-info {
+    margin-top: 28px;
+    padding: 15px 15px 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #d4d9e9;
+}
+.quick-info h2 {
+    margin-top: 0;
+    color: #33415f;
+}
+.info-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+.info-item {
+    background: #f8faff;
+    padding: 11px 12px;
+    border: 1px solid #dce6fa;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+.footer {
+    margin-top: 28px;
+    padding: 12px 0;
+    text-align: center;
+    color: #63728a;
+    background: #ffffff;
+    border-top: 1px solid #e0e7f0;
+}
+@media (max-width: 640px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    .card {
+        padding: 16px;
+    }
+}
