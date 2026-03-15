@@ -34,7 +34,9 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(',')
 
 # Application definition
 MY_APPS = [
-    'apps.shveya.apps.ShveyaConfig'
+    'apps.shveya.apps.ShveyaConfig',
+    'apps.zakroi.apps.ZakroiConfig',
+    'apps.users.apps.UsersConfig',
 ]
 
 THIRD_PARTY_APPS = []
@@ -129,4 +131,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
     BASE_DIR / 'apps' / 'shveya' / 'static',
+    BASE_DIR / 'apps' / 'zakroi' / 'static',
+    BASE_DIR / 'apps' / 'users' / 'static',
 ]
