@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title> Zakroi asdasdas</title>
+    <title>Закройщик - Главная</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'zakroi/css/style.css' %}">
 </head>
 <body>
+    <div class="container">
+        <h1>Закройщик - Управление партиями</h1>
+        <a href="{% url 'create_user' %}">Создать пользователя</a> |
+        <a href="{% url 'create_party' %}">Создать партию</a> |
+        <a href="{% url 'party_stats' %}">Статистика партий</a>
 
+        <h2>Партий</h2>
+        <ul>
+            {% for party in parties %}
+                <li>
+                    {{ party.batch_number }} - {{ party.design }}
+                    <ul>
+                        {% for material in party.materials.all %}
+                            <li>
+                                <a href="{% url 'material_detail' material.id %}">{{ material.color }} ({{ material.tshirt_count }})</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% empty %}
+                <li>Нет партий пока</li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>

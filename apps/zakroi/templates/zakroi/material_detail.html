@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Детали материала</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'zakroi/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Материал {{ material.color }} ({{ material.tshirt_count }})</h1>
+        <p>Партия: {{ material.party.batch_number }} - {{ material.party.design }}</p>
+        <p>Линии: {{ material.quantity_line }}</p>
+
+        <h2>Статусы по этапам</h2>
+        <ul>
+            <li>4-х: {{ material.four_x }} / {{ material.four_x_count }}</li>
+            <li>Распаш: {{ material.raspash }} / {{ material.raspash_count }}</li>
+            <li>Бейка: {{ material.beika }} / {{ material.beika_count }}</li>
+            <li>Строчка: {{ material.strochka }} / {{ material.strochka_count }}</li>
+            <li>Горло: {{ material.gorlo }} / {{ material.gorlo_count }}</li>
+            <li>Утюг: {{ material.ytyg }} / {{ material.ytyg_count }}</li>
+            <li>ОТК: {{ material.otk }} / {{ material.otk_count }}</li>
+            <li>Упаковка: {{ material.ypakovka }} / {{ material.ypakovka_count }}</li>
+        </ul>
+
+        <h2>Запись этапа</h2>
+        <ul>
+            <li><a href="{% url 'four_x' material.id %}">4-х</a></li>
+            <li><a href="{% url 'raspash' material.id %}">Распаш</a></li>
+            <li><a href="{% url 'beika' material.id %}">Бейка</a></li>
+            <li><a href="{% url 'strochka' material.id %}">Строчка</a></li>
+            <li><a href="{% url 'gorlo' material.id %}">Горло</a></li>
+            <li><a href="{% url 'ytyg' material.id %}">Утюг</a></li>
+            <li><a href="{% url 'otk' material.id %}">ОТК</a></li>
+            <li><a href="{% url 'ypakovka' material.id %}">Упаковка</a></li>
+        </ul>
+
+        <a href="{% url 'zakroi_home' %}">Назад</a>
+    </div>
+</body>
+</html>

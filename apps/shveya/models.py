@@ -21,28 +21,28 @@ class Material(models.Model):
     quantity_line = models.IntegerField()
     tshirt_count = models.IntegerField()
 
-    four_x = models.CharField(max_length=50, blank=True)
+    four_x = models.CharField(max_length=50, blank=True, null=True, default='')
     four_x_count = models.IntegerField(null=True, blank=True)
 
-    raspash = models.CharField(max_length=50, blank=True)
+    raspash = models.CharField(max_length=50, blank=True, null=True, default='')
     raspash_count = models.IntegerField(null=True, blank=True)
 
-    beika = models.CharField(max_length=50, blank=True)
+    beika = models.CharField(max_length=50, blank=True, null=True, default='')
     beika_count = models.IntegerField(null=True, blank=True)
 
-    strochka =  models.CharField(max_length=50, blank=True)
+    strochka =  models.CharField(max_length=50, blank=True, null=True, default='')
     strochka_count = models.IntegerField(null=True, blank=True)
 
-    gorlo = models.CharField(max_length=50, blank=True)
+    gorlo = models.CharField(max_length=50, blank=True, null=True, default='')
     gorlo_count = models.IntegerField(null=True, blank=True)
 
-    ytyg = models.CharField(max_length=50, blank=True)
+    ytyg = models.CharField(max_length=50, blank=True, null=True, default='')
     ytyg_count = models.IntegerField(null=True, blank=True)
 
-    otk = models.CharField(max_length=50, blank=True)
+    otk = models.CharField(max_length=50, blank=True, null=True, default='')
     otk_count = models.IntegerField(null=True, blank=True)
 
-    ypakovka = models.CharField(max_length=50, blank=True)
+    ypakovka = models.CharField(max_length=50, blank=True, null=True, default='')
     ypakovka_count = models.IntegerField(null=True, blank=True)
 
     def __str__(self):

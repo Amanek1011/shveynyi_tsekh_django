@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Упаковка</title>
+</head>
+<body>
+    <h1>Упаковка для материала {{ material.color }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
+    <a href="{% url 'shveya_home' %}">Назад</a>
+</body>
+</html>
